@@ -1,7 +1,10 @@
 import * as React from "react";
 
-export function Input() {
+export function Input(props: any) {
     return (
-        <div>Input</div>
+        <div className="input-wrapper">
+            <input type="text" value={props.text}></input>
+            <button type="submit">Submit</button>
+        </div>
     )
 }

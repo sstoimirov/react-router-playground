@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import * as CMP from "./components";
 import { TodoType } from './components';
 
@@ -34,6 +34,7 @@ function App() {
   ]
   return (
     <div className="App">
+      <CMP.Input />
       <Todos todos={todos} />
     </div>
   );
