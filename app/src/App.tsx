@@ -1,40 +1,37 @@
-import React from 'react';
-import * as CMP from "./components";
-import { TodoType } from './components';
+import * as React from 'react';
+import Todo from './components/Todo/Todo';
+import { TodoType, TodosType } from './interfaces/interfaces';
+import Input from './components/Input/Input';
 
-interface Todos {
-  todos: TodoType[]
-}
-
-const Todos: React.SFC<Todos> = (props) => {
+const Todos: React.FC<TodosType> = (props) => {
   return (
     <div className="todos">
-      {props.todos.map((todo: TodoType) => <CMP.Todo key={`{${todo.id}__${todo.name}}`} id={todo.id} name={todo.name} text={todo.text}/>)}
+      {props.todos.map((todo: TodoType, index) => <Todo key={`${todo.name}__${index}`} id={index} name={todo.name} clickHandler={() => {
+        props.deleteTodo(index)
+      }} />)}
     </div>
   )
 }
 
 function App() {
-  const todos: TodoType[] = [
-    {
-      id: "1",
-      name: "First todo",
-      text: "Text for first todo"
-    },
-    {
-      id: "2",
-      name: "Second todo",
-      text: "Text for second todo"
-    },
-    {
-      id: "3",
-      name: "Third todo",
-      text: "Text for third todo"
-    }
-  ]
+  const [todos, updateTodos] = React.useState<TodoType[]>([])
+
   return (
     <div className="App">
-      <Todos todos={todos} />
+      <Input saveTodo={(todoText) => {
+        const trimmedText = todoText.trim();
+        const todo = {
+          name: trimmedText,
+        } as TodoType
+
+        if (trimmedText.length > 0) {
+          updateTodos([...todos, todo])
+        }
+      }} />
+      <Todos todos={todos} deleteTodo={todoIndex => {
+        const newTodos = todos.filter((todo, id) => id !== todoIndex);
+        updateTodos(newTodos);
+      }} />
     </div>
   );
 }

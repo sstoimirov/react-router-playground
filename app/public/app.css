@@ -1,0 +1,10 @@
+.todo-wrapper{
+    position: relative;
+    max-width: 300px;
+}
+.todo-delete-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

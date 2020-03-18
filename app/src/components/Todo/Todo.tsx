@@ -1,30 +1,16 @@
 import * as React from "react";
+import Btn from "../Btn/Btn";
+import { TodoType } from "../../interfaces/interfaces";
 
-export interface TodoType {
-    name: string,
-    id: string,
-    text: string
-}
 
-function Btn() {
-    let [isDone, setFinished] = React.useState(false)
-    return (
-        <button type="button" onClick={(e) => setFinished(() => {
-            if (isDone) {
-                return isDone = false
-            }
-            else {
-                return isDone = true
-            }
-        })}>{isDone ? "Finished" : "Not finished"}</button>
-    )
-}
-export const Todo: React.FunctionComponent<TodoType> = (todo) => {
+const Todo: React.FC<TodoType> = ({ id, name, clickHandler }) => {
     return (
         <div className="todo-wrapper">
-            <div>{todo.name}</div>
-            <div>{todo.text}</div>
+            <div>{name}</div>
+            <button className="todo-delete-btn" onClick={clickHandler}>X</button>
             <Btn />
         </div>
     )
 }
+
+export default Todo;
