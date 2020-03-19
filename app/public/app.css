@@ -8,3 +8,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+.todo-wrapper-finished .todo-text {
+    text-decoration: line-through;
+}

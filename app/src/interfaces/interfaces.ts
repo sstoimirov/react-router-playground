@@ -1,7 +1,7 @@
 export interface TodoType {
     name: string,
     id: string,
-    clickHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
+    deleteHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export interface TodosType {

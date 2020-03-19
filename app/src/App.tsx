@@ -7,9 +7,15 @@ import * as  uuid from "uuid";
 const Todos: React.FC<TodosType> = (props) => {
   return (
     <div className="todos">
-      {props.todos.map((todo: TodoType, index) => <Todo key={`${todo.name}__${index}`} id={todo.id} name={todo.name} clickHandler={() => {
-        props.deleteTodo(index)
-      }} />)}
+      {props.todos.map((todo: TodoType, index) =>
+        <Todo
+          key={`${todo.name}__${index}`}
+          id={todo.id}
+          name={todo.name}
+          deleteHandler={() => {
+            props.deleteTodo(index)
+          }} />
+      )}
     </div>
   )
 }

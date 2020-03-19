@@ -1,18 +1,12 @@
 import * as React from "react";
-
-const Btn: React.FC = () => {
-    let [isDone, setFinished] = React.useState(false)
-
-    const btnInfo = isDone ? "finished" : "not-finished"
+interface BtnProps{
+    btnText: string;
+    onClick: (e:React.MouseEvent<HTMLButtonElement>)=>void;
+    isDone: boolean
+}
+const Btn: React.FC<BtnProps> = ({onClick, btnText, isDone}) => {
     return (
-        <button className={btnInfo} type="button" onClick={() => setFinished(() => {
-            if (isDone) {
-                return isDone = false
-            }
-            else {
-                return isDone = true
-            }
-        })}>{btnInfo}</button>
+        <button disabled={isDone} className={"todo-check-btn"} type="button" onClick={onClick}>{btnText}</button>
     )
 }
 export default Btn
