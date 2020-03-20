@@ -12,3 +12,9 @@ export interface TodosType {
 export interface InputProps {
     saveTodo: (value: string) => void;
 }
+
+export interface BtnType{
+    btnText: string;
+    onClick: (e:React.MouseEvent<HTMLButtonElement>)=>void;
+    isDone: boolean
+}
