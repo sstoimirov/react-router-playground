@@ -1,7 +1,7 @@
 export interface TodoType {
     name: string,
     id: string,
-    clickHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
+    deleteHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export interface TodosType {
@@ -11,4 +11,10 @@ export interface TodosType {
 
 export interface InputProps {
     saveTodo: (value: string) => void;
+}
+
+export interface BtnType{
+    btnText: string;
+    onClick: (e:React.MouseEvent<HTMLButtonElement>)=>void;
+    isDone: boolean
 }
