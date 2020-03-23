@@ -1,46 +1,22 @@
 import * as React from 'react';
-import Todo from './components/Todo/Todo';
-import { TodoType, TodosType } from './interfaces/interfaces';
-import Input from './components/Input/Input';
-import * as  uuid from "uuid";
-
-const Todos: React.FC<TodosType> = (props) => {
-  return (
-    <div className="todos">
-      {props.todos.map((todo: TodoType, index) =>
-        <Todo
-          key={`${todo.name}__${index}`}
-          id={todo.id}
-          name={todo.name}
-          deleteHandler={() => {
-            props.deleteTodo(index)
-          }} />
-      )}
-    </div>
-  )
-}
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Users } from './components/Users/Users';
+import Todos from './components/Todos/Todos';
 
 function App() {
-  const [todos, updateTodos] = React.useState<TodoType[]>([])
-
   return (
-    <div className="App">
-      <Input saveTodo={(todoText) => {
-        const trimmedText = todoText.trim();
-        const todo = {
-          name: trimmedText,
-          id: uuid.v4()
-        } as TodoType
-
-        if (trimmedText.length > 0) {
-          updateTodos([...todos, todo])
-        }
-      }} />
-      <Todos todos={todos} deleteTodo={todoIndex => {
-        const newTodos = todos.filter((todo, id) => id !== todoIndex);
-        updateTodos(newTodos);
-      }} />
-    </div>
+      <Router className="App">
+        <nav className="navigation-items">
+          <div className="navigation-items__home-page"><Link to="/">Home</Link></div>
+          <div className="navigation-items__todos-page"><Link to="/todos">Todos</Link></div>
+          <div className="navigation-items__users-page"><Link to="/users">Users</Link></div>
+        </nav>
+        <Switch>
+          <Route exact path="/" />
+          <Route path="/todos" component={Todos} />
+          <Route path="/users" component={Users} />
+        </Switch>
+      </Router>
   );
 }
 
