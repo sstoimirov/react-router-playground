@@ -12,3 +12,18 @@
 .todo-wrapper-finished .todo-text {
     text-decoration: line-through;
 }
+
+.navigation-items{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.navigation-items__home-page,
+.navigation-items__todos-page,
+.navigation-items__users-page{
+    display: flex;
+    flex-basis: 100%;
+    flex: 1;
+    justify-content: center;
+}
+

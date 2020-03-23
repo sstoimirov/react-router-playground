@@ -18,3 +18,9 @@ export interface BtnType{
     onClick: (e:React.MouseEvent<HTMLButtonElement>)=>void;
     isDone: boolean
 }
+
+export interface User {
+    id: string,
+    name: string,
+    email: string
+}
