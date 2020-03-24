@@ -2,7 +2,7 @@ import * as React from "react";
 import * as  uuid from "uuid";
 
 import Input from "../Input/Input";
-import { TodoType } from "../../interfaces/interfaces";
+import { TodoType } from "../../typings/typings";
 import Todo from "../Todo/Todo";
 
 const Todos: React.FC = () => {

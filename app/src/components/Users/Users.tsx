@@ -1,5 +1,5 @@
 import * as React from "react";
-import { UserType } from "../../interfaces/interfaces";
+import { UserType } from "../../typings/typings";
 
 export const Users: React.FC = () => {
     let [users, getUsers] = React.useState<UserType[]>([]);

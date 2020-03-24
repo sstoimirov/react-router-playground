@@ -4,12 +4,7 @@ export type TodoType = {
     deleteHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export type TodosType = {
-    todos: TodoType[],
-    deleteTodo: (index: number) => void
-}
-
-export type InputProps= {
+export type InputType= {
     saveTodo: (value: string) => void;
 }
 

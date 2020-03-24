@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BtnType } from "../../interfaces/interfaces";
+import { BtnType } from "../../typings/typings";
 
 const Btn: React.FC<BtnType> = ({onClick, btnText, isDone}) => {
     return (

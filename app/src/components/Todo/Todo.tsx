@@ -1,6 +1,6 @@
 import * as React from "react";
 import Btn from "../Btn/Btn";
-import { TodoType } from "../../interfaces/interfaces";
+import { TodoType } from "../../typings/typings";
 
 function Todo({ id, name, deleteHandler }: TodoType) {
     let [isDone, setFinished] = React.useState(false);
