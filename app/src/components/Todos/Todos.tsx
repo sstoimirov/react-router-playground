@@ -2,12 +2,18 @@ import * as React from "react";
 import * as  uuid from "uuid";
 
 import Input from "../Input/Input";
-import { TodoType } from "../../typings/typings";
 import Todo from "../Todo/Todo";
+import { TodoType } from "../../typings/typings";
 
 const Todos: React.FC = () => {
     const [todos, updateTodos] = React.useState<TodoType[]>([]);
-    
+
+    const removeTodo = index => {
+        const newTodos = [...todos];
+        newTodos.splice(index, 1);
+        updateTodos(newTodos);
+    }
+
     return (
         <div className="todo-app">
             <Input saveTodo={(todoText) => {
@@ -28,10 +34,12 @@ const Todos: React.FC = () => {
                         key={`${todo.name}__${index}`}
                         id={todo.id}
                         name={todo.name}
-                        deleteHandler={() => {
-                            const newTodos = todos.filter((_,id)=>id !== index)
-                            updateTodos(newTodos)
-                        }} />
+                        deleteHandler={() => removeTodo(index)
+                            // {
+                            //     const newTodos = todos.filter((_, id) => id !== index)
+                            //     updateTodos(newTodos)
+                            // }
+                        } />
                 )}
             </div>
         </div>
