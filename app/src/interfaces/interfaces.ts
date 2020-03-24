@@ -1,25 +1,25 @@
-export interface TodoType {
+export type TodoType = {
     name: string,
     id: string,
     deleteHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export interface TodosType {
+export type TodosType = {
     todos: TodoType[],
     deleteTodo: (index: number) => void
 }
 
-export interface InputProps {
+export type InputProps= {
     saveTodo: (value: string) => void;
 }
 
-export interface BtnType{
+export type BtnType= {
     btnText: string;
-    onClick: (e:React.MouseEvent<HTMLButtonElement>)=>void;
+    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
     isDone: boolean
 }
 
-export interface User {
+export type UserType ={
     id: string,
     name: string,
     email: string

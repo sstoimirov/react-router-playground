@@ -6,7 +6,7 @@ import { TodoType } from "../../interfaces/interfaces";
 import Todo from "../Todo/Todo";
 
 const Todos: React.FC = () => {
-    const [todos, updateTodos] = React.useState<TodoType[]>([])
+    const [todos, updateTodos] = React.useState<TodoType[]>([]);
     
     return (
         <div className="todo-app">
