@@ -2,8 +2,8 @@ import * as React from "react";
 import * as  uuid from "uuid";
 
 import Input from "../Input/Input";
-import { TodoType } from "../../typings/typings";
 import Todo from "../Todo/Todo";
+import { TodoType } from "../../typings/typings";
 
 const Todos: React.FC = () => {
     const [todos, updateTodos] = React.useState<TodoType[]>([]);
