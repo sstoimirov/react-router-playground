@@ -2,13 +2,10 @@ import * as React from "react";
 import Btn from "../Btn/Btn";
 import { TodoType } from "../../typings/typings";
 
-function Todo({ id, name, deleteHandler }: TodoType) {
+const Todo: React.FC<TodoType> = ({ id, name, deleteHandler }) => {
     let [isDone, setFinished] = React.useState(false);
     const clsName = isDone ? "todo-wrapper todo-wrapper-finished" : "todo-wrapper";
 
-    React.useEffect(() => {
-
-    })
     return (
         <div className={clsName} id={id}>
             <div className="todo-text">{name}</div>
