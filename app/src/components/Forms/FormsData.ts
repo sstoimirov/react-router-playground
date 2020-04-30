@@ -1,11 +1,11 @@
 export const formsData = [
     {
-        "placeholder": "Purpose of load",
+        "placeholder": "Purpose of loan",
         "name": "name",
         "type": "dropdown",
         "required": true,
         "options": [
-            "Home load",
+            "Home loan",
             "Business loan",
             "Working Capital",
             "Pesonal loan"

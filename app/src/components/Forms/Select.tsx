@@ -12,7 +12,6 @@ export const Select: React.FC<SelectProps> = ({ name, placeholder, val, required
         <div>
             <label>{placeholder}</label>
             <select name={name} required={required} onChange={handleChange}>
-                <option value="">Select an option</option>
                 {val?.map(values => <option value={values} key={values}>{values}</option>)}
             </select>
         </div>
