@@ -4,34 +4,41 @@ import { TodoType } from "../../typings/typings";
 
 const Todo: React.FC<TodoType> = ({ id, name, deleteHandler }) => {
     let [isDone, setFinished] = React.useState(false);
-    let [isEdit, updateEdit] = React.useState(false);
-    let [value, updateValue] = React.useState(name)
+    const [isEdit, updateEdit] = React.useState(false);
+    const [value, updateValue] = React.useState(name)
     const clsName = isDone ? "todo-wrapper todo-wrapper-finished" : "todo-wrapper";
-    const inputRef: any = React.useRef<HTMLInputElement>(null)
+    const inputRef = React.useRef<HTMLInputElement>(null)
 
     const renderEditedTodo = () => {
         return <div>
             <input type="text" defaultValue={value} ref={inputRef}></input>
-            <button onClick={() => updateValue(() => {
-                updateEdit(false)
-                return value = inputRef.current.value;
-            })}>OK</button>
-            <button onClick={()=>updateEdit(false)}>X</button>
+            <Btn clsName="todo-update-value-btn" btnText="Save" onClick={() => updateValue(() => {
+                updateEdit(false);
+                if (inputRef.current) {
+                    return inputRef.current.value !== '' ?
+                        inputRef.current.value : value
+                }
+                return value
+
+            })} />
+            <Btn clsName="todo-close-edit-btn" btnText="Close" onClick={() => updateEdit(false)} />
         </div>
     }
     return (
         <div className={clsName} id={id}>
             {isEdit ? renderEditedTodo() : <div className="todo-text">{value}</div>}
-            <button className="todo-delete-btn" onClick={deleteHandler}>X</button>
+            <Btn clsName="todo-delete-btn" btnText="X" onClick={deleteHandler} />
             <Btn
+                clsName="todo-check-btn"
                 btnText={isDone ? "Completed" : "Not Completed"}
-                onClick={() => setFinished(() => { return isDone = !isDone })}
-                isDone={isDone} />
-            <button
-                onClick={() => updateEdit(() => {
-                    return isEdit = !isEdit
-                })}>Edit
-            </button>
+                onClick={() => setFinished(!isDone)}
+                isDone={isDone}
+            />
+            <Btn
+                btnText="Edit"
+                clsName="todo-edit-btn"
+                onClick={() => updateEdit(!isEdit)}
+            />
         </div>
     )
 }

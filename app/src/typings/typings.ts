@@ -11,7 +11,8 @@ export type InputType = {
 export type BtnType = {
     btnText: string;
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-    isDone: boolean
+    clsName: string;
+    isDone?: boolean
 }
 
 export type UserType = {
