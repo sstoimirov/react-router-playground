@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { UserType } from "../../typings/typings";
-import User from "../User/User";
+import { User } from "../User/User";
 
 export const Users: React.FC = () => {
     let [users, getUsers] = React.useState<UserType[]>([]);
@@ -17,7 +17,7 @@ export const Users: React.FC = () => {
     return (
         <div className="users">
             {users.map((user: UserType) =>
-                <User key={user.id} id={user.id} avatar={user.avatar} email={user.email} first_name={user.first_name} last_name={user.last_name}/>
+                <User key={user.id} id={user.id} avatar={user.avatar} email={user.email} first_name={user.first_name} last_name={user.last_name} />
             )}
         </div>
     )

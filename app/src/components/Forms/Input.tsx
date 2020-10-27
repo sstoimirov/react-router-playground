@@ -1,21 +1,17 @@
-import * as React from "react";
+import React from "react";
 
-export type InputProps = {
-    name: string,
-    placeholder: string,
-    required: boolean
+type InputProps = {
+    label: string,
+    isRequired: boolean
 }
-export const Input: React.FC<InputProps> = ({ name, placeholder, required }) => {
+export const Input: React.FC<InputProps> = ({ label, isRequired }) => {
     return (
         <div>
             <input
                 type="text"
-                name={name}
-                required={required}
-                placeholder={placeholder}
+                required={isRequired}
+                placeholder={label}
                 autoComplete="off" />
         </div>
     )
 }
-
-export default InputProps;

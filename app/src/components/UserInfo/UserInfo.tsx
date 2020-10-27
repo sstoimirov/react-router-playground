@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { UserInfoType } from "../../typings/typings";
 
 export const UserInfo: React.FC<UserInfoType> = ({ last_name, userId, email }) => {
@@ -10,4 +10,3 @@ export const UserInfo: React.FC<UserInfoType> = ({ last_name, userId, email }) =
         </div>
     )
 }
-export default UserInfo

@@ -1,9 +1,10 @@
-export const formsData = [
+export const fields = [
     {
-        "placeholder": "Purpose of loan",
-        "name": "name",
-        "type": "dropdown",
-        "required": true,
+        "type":"dropdown",
+        "label": 'Purpose of loan',
+        "description": '',
+        "isRequired": true,
+        "id": 'sQuestion55',
         "options": [
             "Home loan",
             "Business loan",
@@ -11,16 +12,19 @@ export const formsData = [
             "Pesonal loan"
         ]
     },
+    
     {
-        "placeholder": "Input text",
-        "name": "name",
         "type": "input",
-        "required": true
+        "label": 'Input text',
+        "description": '',
+        "isRequired": true,
+        "id": 'sQuestion55',
     },
     {
-        "placeholder": "TextArea",
-        "name": "name",
         "type": "textarea",
-        "required": true
+        "label": 'Text area',
+        "description": '',
+        "isRequired": true,
+        "id": 'sQuestion55',
     }
 ]

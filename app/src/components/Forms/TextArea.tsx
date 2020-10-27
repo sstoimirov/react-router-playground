@@ -1,22 +1,19 @@
-import * as React from "react";
+import React from "react";
 
-export type TextAreaProps = {
-    name: string,
-    placeholder: string,
-    required: boolean
+type TextAreaProps = {
+    label: string,
+    isRequired: boolean
 }
-export const TextArea: React.FC<TextAreaProps> = ({ name, placeholder, required }) => {
+export const TextArea: React.FC<TextAreaProps> = ({ label, isRequired }) => {
     return (
         <div>
             <textarea
                 name="name"
-                required={required}
-                placeholder={placeholder}
+                required={isRequired}
+                placeholder={label}
                 autoComplete="off"
             />
 
         </div>
     )
 }
-
-export default TextArea;

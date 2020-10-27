@@ -1,46 +1,44 @@
-import * as React from "react";
+import React from "react";
 import { TextArea } from "../Forms/TextArea";
 import { Select } from "../Forms/Select";
 import { Input } from "../Forms/Input";
-import { formsData } from "../Forms/FormsData";
+import { fields } from "../Forms/FormsData";
 
 export const HomePage: React.FC = () => {
 
     return (
         <div>
             <form>
-                {formsData.map(form => {
+                {fields.map(form => { 
                     if (form.type === "dropdown") {
                         return (
                             <Select
                                 handleChange={() => { }}
-                                name={form.name}
-                                placeholder={form.placeholder}
-                                required={form.required}
-                                val={form.options} />
+                                label={form.label}
+                                isRequired={form.isRequired}
+                                options={form.options} />
                         )
                     }
                     if (form.type === "textarea") {
                         return (
                             <TextArea
-                                name={form.name}
-                                placeholder={form.placeholder}
-                                required={form.required} />
+                                label={form.label}
+                                isRequired={form.isRequired} />
                         )
                     }
                     if (form.type === "input") {
                         return (
                             <Input
-                                name={form.name}
-                                placeholder={form.placeholder}
-                                required={form.required}
+                                label={form.label}
+                                isRequired={form.isRequired}
                             />
                         )
+                    }
+                    else {
+                        return ""
                     }
                 })}
             </form>
         </div>
     )
 }
-
-export default HomePage;

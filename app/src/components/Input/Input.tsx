@@ -1,7 +1,7 @@
-import * as React from "react";
+import React from "react";
 import { InputType } from "../../typings/typings";
 
-const Input: React.FC<InputType> = ({ saveTodo }) => {
+export const Input: React.FC<InputType> = ({ saveTodo }) => {
     const [value, setValue] = React.useState("");
 
     return (
@@ -14,5 +14,3 @@ const Input: React.FC<InputType> = ({ saveTodo }) => {
         </div>
     )
 }
-
-export default Input

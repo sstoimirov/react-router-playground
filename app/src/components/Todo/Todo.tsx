@@ -1,13 +1,13 @@
-import * as React from "react";
-import Btn from "../Btn/Btn";
+import React, { useState, useRef } from "react";
+import { Btn } from "../Btn/Btn";
 import { TodoType } from "../../typings/typings";
 
-const Todo: React.FC<TodoType> = ({ id, name, deleteHandler }) => {
-    let [isDone, setFinished] = React.useState(false);
-    const [isEdit, updateEdit] = React.useState(false);
-    const [value, updateValue] = React.useState(name)
+export const Todo: React.FC<TodoType> = ({ id, name, deleteHandler }) => {
+    let [isDone, setFinished] = useState(false);
+    const [isEdit, updateEdit] = useState(false);
+    const [value, updateValue] = useState(name)
     const clsName = isDone ? "todo-wrapper todo-wrapper-finished" : "todo-wrapper";
-    const inputRef = React.useRef<HTMLInputElement>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const renderEditedTodo = () => {
         return <div>
@@ -42,5 +42,3 @@ const Todo: React.FC<TodoType> = ({ id, name, deleteHandler }) => {
         </div>
     )
 }
-
-export default Todo;

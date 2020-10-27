@@ -1,11 +1,11 @@
-import * as React from "react";
-import * as  uuid from "uuid";
+import React from "react";
+import * as uuid from "uuid";
 
-import Input from "../Input/Input";
-import Todo from "../Todo/Todo";
+import { Input } from "../Input/Input";
+import { Todo } from "../Todo/Todo";
 import { TodoType } from "../../typings/typings";
 
-const Todos: React.FC = () => {
+export const Todos: React.FC = () => {
     const [todos, updateTodos] = React.useState<TodoType[]>([]);
 
     const removeTodo = index => {
@@ -35,10 +35,6 @@ const Todos: React.FC = () => {
                         id={todo.id}
                         name={todo.name}
                         deleteHandler={() => removeTodo(index)
-                            // {
-                            //     const newTodos = todos.filter((_, id) => id !== index)
-                            //     updateTodos(newTodos)
-                            // }
                         } />
                 )}
             </div>
@@ -46,4 +42,3 @@ const Todos: React.FC = () => {
 
     )
 }
-export default Todos
