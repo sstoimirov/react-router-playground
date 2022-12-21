@@ -12,7 +12,9 @@ export type BtnType = {
     btnText: string;
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
     clsName: string;
+    isActive?: boolean
     isDone?: boolean
+    id?: string
 }
 
 export type UserType = {

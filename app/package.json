@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/styled-components": "4.4.0",
+    "@types/styled-system": "5.1.1",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
@@ -13,9 +15,12 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
+    "styled-components": "^4.4.1",
+    "styled-system": "^5.1.2",
     "react-scripts": "3.4.0",
     "typescript": "~3.7.2",
-    "uuid": "^7.0.2"
+    "uuid": "^7.0.2",
+    "@rg/patternlab": "git+ssh://git@bitbucket.org:rewardgateway/rg-patternlab.git#v0.4.12"
   },
   "scripts": {
     "start": "react-scripts start",
