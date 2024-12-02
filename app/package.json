@@ -17,7 +17,7 @@
     "react-router-dom": "^5.1.2",
     "styled-components": "^4.4.1",
     "styled-system": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "3.4.4",
     "typescript": "~3.7.2",
     "uuid": "^7.0.2",
     "@rg/patternlab": "git+ssh://git@bitbucket.org:rewardgateway/rg-patternlab.git#v0.4.12"
